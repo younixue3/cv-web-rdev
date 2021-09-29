@@ -21,13 +21,16 @@
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <a href="dashboard.html">
               <div class="bg-gray-300 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-                <i class="fas fa-columns mr-3"></i><span>Dashboard</span>
+<!--                <i class="fas fa-columns mr-3"></i>-->
+                <font-awesome-icon class="mr-3" :icon="['fas', 'columns']"/>
+                <span>Dashboard</span>
               </div>
             </a>
           </li>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
-              <i class="fas fa-desktop mr-3"></i>
+<!--              <i class="fas fa-desktop mr-3"></i>-->
+              <font-awesome-icon class="mr-3" :icon="['fas', 'desktop']"/>
               <div class="inline-block w-3/4">Layout</div>
               <span class="overflow-hidden">
                             <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
@@ -59,13 +62,16 @@
           <a href="charts.html">
             <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
               <div class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-                <i class="fas fa-chart-pie mr-3"></i><span>Charts</span>
+<!--                <i class="fas fa-chart-pie mr-3"></i>-->
+                <font-awesome-icon class="mr-3" :icon="['fas', 'chart-pie']"/>
+                <span>Charts</span>
               </div>
             </li>
           </a>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-              <i class="fas fa-puzzle-piece mr-3"></i>
+<!--              <i class="fas fa-puzzle-piece mr-3"></i>-->
+              <font-awesome-icon class="mr-3" :icon="['fas', 'puzzle-piece']"/>
               <div class="inline-block w-3/4">Components</div>
               <span class="overflow-hidden">
                             <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
@@ -112,7 +118,8 @@
           </li>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-              <i class="fas fa-window-maximize mr-3"></i>
+<!--              <i class="fas fa-window-maximize mr-3"></i>-->
+              <font-awesome-icon class="mr-3" :icon="['fas', 'window-maximize']"/>
               <div class="inline-block w-3/4">Pages</div>
               <span class="overflow-hidden">
                             <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
@@ -147,7 +154,8 @@
           </li>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-              <i class="fas fa-hand-holding-heart mr-3"></i>
+<!--              <i class="fas fa-hand-holding-heart mr-3"></i>-->
+              <font-awesome-icon class="mr-3" :icon="['fas', 'hand-holding-heart']"/>
               <div class="inline-block w-3/4">Example</div>
               <span class="overflow-hidden">
                             <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>

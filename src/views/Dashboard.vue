@@ -17,7 +17,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
           <div class="bg-purple-500 shadow-md text-white rounded-xl flex">
             <div class="hidden lg:block w-1/3 text-5xl p-5">
-              <i class="bg-white text-purple-500 rounded-full px-5 py-4 fas fa-shopping-bag"></i>
+              <font-awesome-icon :icon="['fas', 'user']"/>
+<!--              <i class="bg-white text-purple-500 rounded-full px-5 py-4 fas fa-shopping-bag"></i>-->
             </div>
             <div class="w-2/3 ml-10 lg:ml-5 my-auto">
               <span class="text-5xl md:text-3xl">36</span>
@@ -26,7 +27,8 @@
           </div>
           <div class="bg-green-400 shadow-md text-white rounded-xl flex">
             <div class="hidden lg:block w-1/3 text-5xl p-5">
-              <i class="bg-white text-green-400 rounded-full px-3 py-4 fas fa-users"></i>
+              <font-awesome-icon :icon="['fas', 'shopping-bag']"/>
+<!--              <i class="bg-white text-green-400 rounded-full px-3 py-4 fas fa-users"></i>-->
             </div>
             <div class="w-2/3 ml-10 lg:ml-5 my-auto">
               <span class="text-5xl md:text-3xl">10</span>
