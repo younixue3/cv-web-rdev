@@ -1,6 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
+// Page
 import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
+import Project from "../views/Project";
+import Certificate from "../views/Certificate";
+
+// Layout
 import DashboardLayout from "../views/layout/Dashboard.vue";
 
 const routes = [
@@ -18,6 +24,16 @@ const routes = [
         path: 'index',
         name: 'indexDashboard',
         component: Dashboard
+      },
+      {
+        path: 'project',
+        name: 'Project',
+        component: Project
+      },
+      {
+        path: 'certificate',
+        name: 'Certificate',
+        component: Certificate
       }
     ]
   }

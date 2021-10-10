@@ -1,6 +1,7 @@
 <template>
   <div class="flex w-full">
     <div id="mobile-menu"
+         v-bind:class="{ '' : onPath }"
          class="h-full md:h-auto text-gray-800 z-50 fixed w-0 md:w-11 lg:w-80 md:hover:w-80 duration-300 bg-gray-100 shadow-md md:static overflow-hidden md:overflow-none">
       <div class="font-bold text-xl h-16 pr-2 md:pr-0 overflow-hidden truncate flex">
         <img class="min-h-5 h-5 mx-3 my-auto" src="" alt="">
@@ -19,174 +20,32 @@
       <div class="text-lg font-normal tracking-tight">
         <ul class="py-5 px-1 py-2">
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-            <a href="dashboard.html">
+            <router-link to="/dashboard">
               <div class="bg-gray-300 hover:bg-gray-200 px-2 pt-1 rounded-lg">
 <!--                <i class="fas fa-columns mr-3"></i>-->
                 <font-awesome-icon class="mr-3" :icon="['fas', 'columns']"/>
                 <span>Dashboard</span>
               </div>
-            </a>
+            </router-link>
           </li>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-            <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
-<!--              <i class="fas fa-desktop mr-3"></i>-->
-              <font-awesome-icon class="mr-3" :icon="['fas', 'desktop']"/>
-              <div class="inline-block w-3/4">Layout</div>
-              <span class="overflow-hidden">
-                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
-                        </span>
-            </div>
-            <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
-              <a href="boxed.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span class="">Boxed</span></li>
-              </a>
-              <a href="fixednavbar.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Fixed Navbar</span></li>
-              </a>
-              <a href="fixedsidebar.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Fixed Sidebar</span></li>
-              </a>
-              <a href="fixednavsidebar.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Fixed Sidebar + Navbar</span></li>
-              </a>
-            </ul>
-          </li>
-          <a href="charts.html">
-            <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-              <div class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-<!--                <i class="fas fa-chart-pie mr-3"></i>-->
-                <font-awesome-icon class="mr-3" :icon="['fas', 'chart-pie']"/>
-                <span>Charts</span>
+            <router-link to="/dashboard/project">
+              <div class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
+<!--                <i class="fas fa-columns mr-3"></i>-->
+                <font-awesome-icon class="mr-3" :icon="['fas', 'th-list']"/>
+                <span>Project</span>
               </div>
-            </li>
-          </a>
-          <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-            <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-<!--              <i class="fas fa-puzzle-piece mr-3"></i>-->
-              <font-awesome-icon class="mr-3" :icon="['fas', 'puzzle-piece']"/>
-              <div class="inline-block w-3/4">Components</div>
-              <span class="overflow-hidden">
-                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
-                        </span>
-            </div>
-            <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
-              <a href="theme.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Theme</span>
-                </li>
-              </a>
-              <a href="button.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Buttons</span>
-                </li>
-              </a>
-              <a href="modalsalerts.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Modals & Alerts</span>
-                </li>
-              </a>
-              <a href="cards.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Cards</span>
-                </li>
-              </a>
-              <a href="forms.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Forms</span>
-                </li>
-              </a>
-              <a href="tables.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Tables</span>
-                </li>
-              </a>
-            </ul>
+            </router-link>
           </li>
+
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-            <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-<!--              <i class="fas fa-window-maximize mr-3"></i>-->
-              <font-awesome-icon class="mr-3" :icon="['fas', 'window-maximize']"/>
-              <div class="inline-block w-3/4">Pages</div>
-              <span class="overflow-hidden">
-                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
-                        </span>
-            </div>
-            <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
-              <a href="login.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Login</span>
-                </li>
-              </a>
-              <a href="register.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Register</span>
-                </li>
-              </a>
-              <a href="errors.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Errors</span>
-                </li>
-              </a>
-              <a href="searchs.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Searchs</span>
-                </li>
-              </a>
-            </ul>
-          </li>
-          <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
-            <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
-<!--              <i class="fas fa-hand-holding-heart mr-3"></i>-->
-              <font-awesome-icon class="mr-3" :icon="['fas', 'hand-holding-heart']"/>
-              <div class="inline-block w-3/4">Example</div>
-              <span class="overflow-hidden">
-                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
-                        </span>
-            </div>
-            <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
-              <a href="blog.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Blog</span>
-                </li>
-              </a>
-              <a href="hero.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Hero</span>
-                </li>
-              </a>
-              <a href="mailbox.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Mailbox</span>
-                </li>
-              </a>
-              <a href="calendars.html">
-                <li onclick="DropDownItem()" class="my-1 cursor-pointer">
-                  <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
-                  <span>Calendar</span>
-                </li>
-              </a>
-            </ul>
+            <router-link to="/dashboard/certificate">
+              <div class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
+                <!--                <i class="fas fa-columns mr-3"></i>-->
+                <font-awesome-icon class="mr-3" :icon="['fas', 'certificate']"/>
+                <span>Certificate</span>
+              </div>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -334,7 +193,7 @@
           </div>
         </div>
       </nav>
-      <div class="min-h-screen px-10 py-5">
+      <div class="min-h-screen px-0 py-0">
         <router-view></router-view>
       </div>
     </div>
@@ -413,7 +272,16 @@
 
 <script>
 export default {
-  name: "Dashboard"
+  name: "Dashboard",
+  data () {
+    return {
+      Collapsed: {
+        ''
+      }
+    }
+  },
+  methods: {
+  }
 }
 </script>
 
