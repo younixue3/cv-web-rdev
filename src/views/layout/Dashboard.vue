@@ -1,14 +1,14 @@
 <template>
   <div class="flex w-full">
     <div id="mobile-menu"
-         v-bind:class="{ '' : onPath }"
-         class="h-full md:h-auto text-gray-800 z-50 fixed w-0 md:w-11 lg:w-80 md:hover:w-80 duration-300 bg-gray-100 shadow-md md:static overflow-hidden md:overflow-none">
+         v-bind:class="{ 'lg:w-11 w-60' : onCollapsed, 'lg:w-80 w-0' : offCollapsed}"
+         class="h-full md:h-auto text-gray-800 z-50 fixed w-0 md:w-11 md:hover:w-80 duration-300 bg-gray-100 shadow-md md:static overflow-hidden md:overflow-none">
       <div class="font-bold text-xl h-16 pr-2 md:pr-0 overflow-hidden truncate flex">
-        <img class="min-h-5 h-5 mx-3 my-auto" src="" alt="">
+        <img class="min-h-5 h-5 mx-3 my-auto" src="@/assets/path4979.png" alt="">
         <span class="ml-4 my-auto text-2xl align-middle font-light">
                     RDeveloper
             </span>
-        <button onclick="CloseBar()" type="button" class="mx-auto md:hidden">
+        <button v-on:click="Collapsed" type="button" class="mx-auto md:hidden">
           <!-- Heroicon name: outline/x -->
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                stroke="currentColor" aria-hidden="true">
@@ -21,7 +21,7 @@
         <ul class="py-5 px-1 py-2">
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <router-link to="/dashboard">
-              <div class="bg-gray-300 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+              <div class="px-2 pt-1 rounded-lg">
 <!--                <i class="fas fa-columns mr-3"></i>-->
                 <font-awesome-icon class="mr-3" :icon="['fas', 'columns']"/>
                 <span>Dashboard</span>
@@ -30,7 +30,7 @@
           </li>
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <router-link to="/dashboard/project">
-              <div class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
+              <div class="w-auto px-2 pt-1 rounded-lg">
 <!--                <i class="fas fa-columns mr-3"></i>-->
                 <font-awesome-icon class="mr-3" :icon="['fas', 'th-list']"/>
                 <span>Project</span>
@@ -40,7 +40,7 @@
 
           <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
             <router-link to="/dashboard/certificate">
-              <div class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
+              <div class="w-auto px-2 pt-1 rounded-lg">
                 <!--                <i class="fas fa-columns mr-3"></i>-->
                 <font-awesome-icon class="mr-3" :icon="['fas', 'certificate']"/>
                 <span>Certificate</span>
@@ -56,7 +56,7 @@
           <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
               <div class="flex-shrink-0">
-                <button onclick="Collapsed()" class="text-gray-800">
+                <button v-on:click="Collapsed" class="text-gray-800">
                   <svg class="block h-6 w-6"
                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                        stroke="currentColor" aria-hidden="true">
@@ -275,12 +275,20 @@ export default {
   name: "Dashboard",
   data () {
     return {
-      Collapsed: {
-        ''
-      }
+      onCollapsed : false,
+      offCollapsed : true
     }
   },
   methods: {
+    Collapsed: function () {
+      if (this.onCollapsed == true) {
+        this.onCollapsed = false
+        this.offCollapsed = true
+      } else {
+        this.onCollapsed = true
+        this.offCollapsed = false
+      }
+    }
   }
 }
 </script>

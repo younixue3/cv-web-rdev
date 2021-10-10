@@ -22,7 +22,7 @@ const routes = [
     children: [
       {
         path: 'index',
-        name: 'indexDashboard',
+        name: 'Dashboard',
         component: Dashboard
       },
       {
